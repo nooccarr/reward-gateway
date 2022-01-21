@@ -2,3 +2,4 @@ node_modules
 bundle.js
 bundle.js*
 .DS_Store
+package-lock.json

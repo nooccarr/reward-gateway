@@ -1,0 +1,32 @@
+{
+  "name": "reward-gateway",
+  "version": "1.0.0",
+  "description": "A webpage with a user creation form.",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nooccarr/reward-gateway.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nooccarr/reward-gateway/issues"
+  },
+  "homepage": "https://github.com/nooccarr/reward-gateway#readme",
+  "dependencies": {
+    "@babel/core": "^7.16.10",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "axios": "^0.25.0",
+    "babel-loader": "^8.2.3",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
