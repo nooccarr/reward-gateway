@@ -3,19 +3,11 @@
   "version": "1.0.0",
   "description": "A webpage with a user creation form.",
   "main": "server/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nooccarr/reward-gateway.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nooccarr/reward-gateway/issues"
+  "scripts": {
+    "start": "nodemon server/index.js --watch"
   },
-  "homepage": "https://github.com/nooccarr/reward-gateway#readme",
   "dependencies": {
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
