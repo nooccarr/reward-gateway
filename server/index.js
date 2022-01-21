@@ -5,6 +5,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(express.static('client/dist'));
 
 app.get('*', (req, res) => {
   res.send('404 Page Not Found');
