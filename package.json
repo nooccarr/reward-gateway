@@ -6,6 +6,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "clean": "rm ./client/dist/bundle.js",
+    "build": "webpack --config webpack.config.js",
     "start": "nodemon server/index.js --watch"
   },
   "dependencies": {
