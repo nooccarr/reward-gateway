@@ -1,4 +1,5 @@
 import React from 'react';
+import validateUserInfo from '../../utils/validateUserInfo';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -24,17 +25,11 @@ class SignUpForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const invalidReasons = [];
-    // var reason = `The ${} is in invalid format.`
-    // if (invalidName) invalidReasons.push()
-    // if (invalidEmail)
-    // if (invalidPassword)
-    // if (invalidState)
-    // if (invalidOccupation)
-    if (invalidReasons.length) {
-      console.log('list all reasons');
+    const invalidReasons = validateUserInfo(this.state);
+    if (invalidReasons) {
+      alert(invalidReasons);
     } else {
-      console.log('successfully loaded');
+      alert('Successfully updated!');
     }
   }
 
