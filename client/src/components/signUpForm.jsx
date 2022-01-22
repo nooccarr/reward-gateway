@@ -9,7 +9,8 @@ class SignUpForm extends React.Component {
       email: '',
       password: '',
       occupation: '',
-      state: ''
+      state: '',
+      showErrorMessages: {}
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -25,9 +26,9 @@ class SignUpForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const invalidReasons = validateUserInfo(this.state);
-    if (invalidReasons) {
-      alert(invalidReasons);
+    const errorMessages = validateUserInfo(this.state);
+    if (Object.keys(errorMessages).length) {
+      this.setState({ showErrorMessages: errorMessages });
     } else {
       this.props.postNewUser(this.state);
       this.props.toggleShowForm();
@@ -40,31 +41,38 @@ class SignUpForm extends React.Component {
 
     return (
       <form onSubmit={e => this.handleSubmit(e)}>
-        <label>name: </label>
+        <label>Your name </label>
         <input
           name='name'
-          placeholder='name'
           type='text'
           value={this.state.name}
           onChange={e => this.handleChange(e)}
         />
-        <label>email: </label>
+        {this.state.showErrorMessages.name ?
+          <p>Name is not in valid format. Please correct and try again.</p> : null
+        }
+        <label>Email </label>
         <input
           name='email'
-          placeholder='email'
           type='text'
           value={this.state.email}
           onChange={e => this.handleChange(e)}
         />
-        <label>password: </label>
+        {this.state.showErrorMessages.email ?
+          <p>Wrong or Invalid email address. Please correct and try again.</p> : null
+        }
+        <label>Password </label>
         <input
           name='password'
-          placeholder='password'
+          placeholder='At least 8 characters'
           type='password'
           value={this.state.password}
           onChange={e => this.handleChange(e)}
         />
-        <label>occupation: </label>
+        {this.state.showErrorMessages.password ?
+          <p>Minimum 8 characters required.</p>: null
+        }
+        <label>Occupation: </label>
         <select
           name='occupation'
           onChange={e => this.handleChange(e)}
@@ -78,8 +86,10 @@ class SignUpForm extends React.Component {
             );
           })}
         </select>
-
-        <label>state: </label>
+        {this.state.showErrorMessages.occupation ?
+          <p>Please select from the occupation options.</p>: null
+        }
+        <label>State: </label>
         <select
           name='state'
           onChange={e => this.handleChange(e)}
@@ -93,7 +103,10 @@ class SignUpForm extends React.Component {
             );
           })}
         </select>
-        <button>sign up!</button>
+        {this.state.showErrorMessages.state ?
+          <p>Please select from the state options.</p>: null
+        }
+        <button>Continue</button>
       </form>
     );
   }

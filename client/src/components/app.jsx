@@ -49,18 +49,21 @@ class App extends React.Component {
     } else {
       return (
         <div>
-          <h1>reward portal</h1>
-          {this.state.showForm ?
-            <SignUpForm
-              occupations={this.state.occupations}
-              states={this.state.states}
-              postNewUser={this.postNewUser}
-              toggleShowForm={this.toggleShowForm}
-            /> :
-            <button onClick={this.toggleShowForm}>
-              sign up
-            </button>
-          }
+          <img src='/img/logo.png' alt='main' width='120'/>
+          <div>
+            {this.state.showForm ?
+              <SignUpForm
+                occupations={this.state.occupations}
+                states={this.state.states}
+                postNewUser={this.postNewUser}
+                toggleShowForm={this.toggleShowForm}
+              /> :
+              <div>
+                <p>New to Fetch Rewards Portal?</p>
+                <button onClick={this.toggleShowForm}>Create your Fetch Rewards account</button>
+              </div>
+            }
+          </div>
         </div>
       );
     }

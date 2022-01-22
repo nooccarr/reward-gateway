@@ -1,11 +1,11 @@
 const validateUserInfo = (info) => {
-  const invalidReasons = [];
-  if (!validName(info.name)) invalidReasons.push('Name is not in proper format.');
-  if (!validEmail(info.email)) invalidReasons.push('Email is not in proper format.');
-  if (!validPassword(info.password)) invalidReasons.push('Password must be at least 8 characters long.');
-  if (!validOccupation(info.occupation)) invalidReasons.push('Please select from the occupation options.');
-  if (!validState(info.state)) invalidReasons.push('Please select from the state options.');
-  return invalidReasons.join('\n');
+  const invalidInputs = {};
+  if (!validName(info.name)) invalidInputs.name = true;
+  if (!validEmail(info.email)) invalidInputs.email = true;
+  if (!validPassword(info.password)) invalidInputs.password = true;
+  if (!validOccupation(info.occupation)) invalidInputs.occupation = true;
+  if (!validState(info.state)) invalidInputs.state = true;
+  return invalidInputs;
 };
 
 const validName = (name) => {

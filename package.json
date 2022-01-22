@@ -1,5 +1,5 @@
 {
-  "name": "reward-gateway",
+  "name": "reward-portal",
   "version": "1.0.0",
   "description": "A webpage with a user creation form.",
   "main": "server/index.js",
