@@ -25,7 +25,6 @@ const validEmail = (email) => {
   if (!/^[a-z0-9]+$/i.test(first)) return false; // regex: alphanumeric only
   let second = parts[1];
   let splitSecond = second.split('.');
-  console.log(second, splitSecond)
   if (second[0] === '.' || second[second.length - 1] === '.') {
     return false;
   } else if (splitSecond.length !== 2) {
@@ -37,7 +36,7 @@ const validEmail = (email) => {
 
   return true;
 };
-
+1
 const validPassword = (password) => {
   if (password.length < 8) return false;
   if (password.indexOf(' ') !== -1) return false;

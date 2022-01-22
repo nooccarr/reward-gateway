@@ -26,6 +26,12 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
+  postNewUser(userInfo) {
+    axios.post('https://frontend-take-home.fetchrewards.com/form', userInfo)
+      .then(({ status }) => console.log(`${status} New User Has Been Successfully Added`))
+      .catch(err => console.log(err));
+  }
+
   render() {
     if (!this.state.occupations || !this.state.states) {
       return (<div>Loading...</div>);
@@ -36,6 +42,7 @@ class App extends React.Component {
           <SignUpForm
             occupations={this.state.occupations}
             states={this.state.states}
+            postNewUser={this.postNewUser}
           />
         </div>
       );

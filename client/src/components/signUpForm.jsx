@@ -29,6 +29,7 @@ class SignUpForm extends React.Component {
     if (invalidReasons) {
       alert(invalidReasons);
     } else {
+      this.props.postNewUser(this.state);
       alert('Successfully updated!');
     }
   }
@@ -38,7 +39,6 @@ class SignUpForm extends React.Component {
 
     return (
       <form onSubmit={e => this.handleSubmit(e)}>
-        {console.log(this.state)}
         <label>Name: </label>
         <input
           name='name'
