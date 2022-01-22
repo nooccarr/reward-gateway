@@ -10,9 +10,9 @@ const validateUserInfo = (info) => {
 
 const validName = (name) => {
   let words = name.split(' ');
-  if (words.length < 2) return false;
+  if (words.length < 2 || words.length > 3) return false;
   for (let i = 0; i < words.length; i++) {
-    let validWord = /^[a-zA-Z]+$/.test(words[i]); // alphabet only
+    let validWord = /^[a-zA-Z]+$/.test(words[i]); // regex: alphabet only
     if (!validWord) return false;
   }
   return true;
@@ -22,15 +22,13 @@ const validEmail = (email) => {
   let parts = email.split('@');
   if (parts.length !== 2) return false;
   let first = parts[0];
-  if (!/^[a-z0-9]+$/i.test(first)) return false;
+  if (!/^[a-z0-9]+$/i.test(first)) return false; // regex: alphanumeric only
   let second = parts[1];
   let splitSecond = second.split('.');
   console.log(second, splitSecond)
   if (second[0] === '.' || second[second.length - 1] === '.') {
-    console.log('IM DOTDOTDOT', second[0], second[second.length - 1])
     return false;
   } else if (splitSecond.length !== 2) {
-    console.log('IMSDFMSD')
     return false;
   }
   for (let i = 0; i < splitSecond.length; i++) {
@@ -41,8 +39,8 @@ const validEmail = (email) => {
 };
 
 const validPassword = (password) => {
-  if (password.length >= 8) return false;
-  if (' '.indexOf(password) !== -1) return false;
+  if (password.length < 8) return false;
+  if (password.indexOf(' ') !== -1) return false;
   return true;
 };
 
