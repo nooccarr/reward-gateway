@@ -41,7 +41,9 @@ const validEmail = (email) => {
 };
 
 const validPassword = (password) => {
-  return password.length >= 8;
+  if (password.length >= 8) return false;
+  if (' '.indexOf(password) !== -1) return false;
+  return true;
 };
 
 const validOccupation = (occupation) => {
