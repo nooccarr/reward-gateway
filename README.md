@@ -2,10 +2,10 @@
 
 ## Goals
 + Create a React app that:
-	- displays a form with inputs for each field outlined below
-  - allows a user to complete and submit the form
-	- do not allow form submission without completing the entire form
-	- provides feedback upon successful form submission
+	displays a form with inputs for each field outlined below
+  allows a user to complete and submit the form
+	do not allow form submission without completing the entire form
+	provides feedback upon successful form submission
 
 ```sh
 {
@@ -16,14 +16,6 @@
     "state": "???"
 }
 ```
-
-## Demo
-
-![Reward Portal Main Page Demo](readme_assets/main.gif)
-
-## Lighthouse Score
-
-![Lighthouse Score](readme_assets/lighthouse.png)
 
 ## Tech Stack
 * [React](https://reactjs.org)
@@ -49,3 +41,11 @@ npm run build-dev
 ```sh
 npm start
 ```
+
+## Demo
+
+![Reward Portal Main Page Demo](readme_assets/main.gif)
+
+## Lighthouse Score
+
+![Lighthouse Score](readme_assets/lighthouse.png)
