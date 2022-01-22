@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import SignUpForm from './signUpForm';
+import crypt from '../../utils/cryptPassword';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,7 +28,10 @@ class App extends React.Component {
   }
 
   postNewUser(userInfo) {
-    axios.post('https://frontend-take-home.fetchrewards.com/form', userInfo)
+    var encryptUser = userInfo;
+    var ciphered = crypt.encrypt(encryptUser.password);
+    encryptUser.password = ciphered;
+    axios.post('https://frontend-take-home.fetchrewards.com/form', encryptUser)
       .then(({ status }) => console.log(`${status} New User Has Been Successfully Added`))
       .catch(err => console.log(err));
   }
