@@ -1,11 +1,11 @@
 # Reward Portal
 
 ## Goals
-- Create a React app that:
-	+ Display a form with inputs for each field outlined below
-  + Allow a user to complete and submit the form
-	+ Do not allow form submission without completing the entire form
-	+ Provide feedback upon successful form submission
++ Create a React app that:
+	- displays a form with inputs for each field outlined below
+  - allows a user to complete and submit the form
+	- do not allow form submission without completing the entire form
+	- provides feedback upon successful form submission
 
 ```sh
 {
@@ -20,6 +20,10 @@
 ## Demo
 
 ![Reward Portal Main Page Demo](readme_assets/main.gif)
+
+## Lighthouse Score
+
+![Lighthouse Score](readme_assets/lighthouse.png)
 
 ## Tech Stack
 * [React](https://reactjs.org)
@@ -45,7 +49,3 @@ npm run build-dev
 ```sh
 npm start
 ```
-
-## Lighthouse Score
-
-![Lighthouse Score](readme_assets/lighthouse.png)
