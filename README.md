@@ -2,10 +2,10 @@
 
 ## Goals
 + Create a React app that:
-	displays a form with inputs for each field outlined below
-  allows a user to complete and submit the form
-	do not allow form submission without completing the entire form
-	provides feedback upon successful form submission
+	* displays a form with inputs for each field outlined below
+  * allows a user to complete and submit the form
+	* does not allow form submission without completing the entire form
+	* provides feedback upon successful form submission
 
 ```sh
 {
