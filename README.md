@@ -45,3 +45,7 @@ npm run build-dev
 ```sh
 npm start
 ```
+
+## Lighthouse Score
+
+![Lighthouse Score](readme_assets/lighthouse.png)
