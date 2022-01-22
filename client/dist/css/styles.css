@@ -42,6 +42,11 @@ ol, ul {
   flex-wrap: wrap;
 }
 
+.spinner {
+  margin-top: 20%;
+  width: 100px;
+}
+
 .logoContainer {
   width: 100%;
   display: flex;

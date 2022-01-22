@@ -45,7 +45,10 @@ class App extends React.Component {
 
   render() {
     if (!this.state.occupations || !this.state.states) {
-      return (<div>loading...</div>);
+      return (
+      <div className='app'>
+        <img className='spinner' src='/img/spinner.gif' alt='main'/>
+      </div>);
     } else {
       return (
         <div className='app'>
