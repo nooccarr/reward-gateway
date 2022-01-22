@@ -35,7 +35,7 @@ class App extends React.Component {
     var ciphered = crypt.encrypt(encryptUser.password);
     encryptUser.password = ciphered;
     axios.post('https://frontend-take-home.fetchrewards.com/form', encryptUser)
-      .then(({ status }) => console.log(`${status} New User Has Been Successfully Added`))
+      .then(({ status }) => console.log(`${status} OK`))
       .catch(err => console.log(err));
   }
 
@@ -48,9 +48,11 @@ class App extends React.Component {
       return (<div>loading...</div>);
     } else {
       return (
-        <div>
-          <img src='/img/logo.png' alt='main' width='120'/>
-          <div>
+        <div className='app'>
+          <div className='logoContainer'>
+            <img className='appLogo' src='/img/logo.png' alt='main'/>
+          </div>
+          <div className='newUserContainer'>
             {this.state.showForm ?
               <SignUpForm
                 occupations={this.state.occupations}
@@ -59,8 +61,10 @@ class App extends React.Component {
                 toggleShowForm={this.toggleShowForm}
               /> :
               <div>
-                <p>New to Fetch Rewards Portal?</p>
-                <button onClick={this.toggleShowForm}>Create your Fetch Rewards account</button>
+                <div className='newUserMessage'>New to Fetch Rewards Portal?</div>
+                <button className='newUserButton' onClick={this.toggleShowForm}>
+                  Create your Fetch Rewards account
+                </button>
               </div>
             }
           </div>

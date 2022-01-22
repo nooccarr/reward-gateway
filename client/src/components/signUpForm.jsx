@@ -32,7 +32,7 @@ class SignUpForm extends React.Component {
     } else {
       this.props.postNewUser(this.state);
       this.props.toggleShowForm();
-      alert('Successfully updated!');
+      alert('Sign Up Successful!');
     }
   }
 
@@ -40,42 +40,55 @@ class SignUpForm extends React.Component {
     const { occupations, states } = this.props;
 
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
-        <label>Your name </label>
+      <form className='newUserForm' onSubmit={e => this.handleSubmit(e)}>
+        <h1 className='newUserFormHeader'>Create account</h1>
+        <div className='newUserLabelContainer'>
+          <label className='newUserFormLabel'>Your name </label>
+        </div>
         <input
           name='name'
           type='text'
           value={this.state.name}
           onChange={e => this.handleChange(e)}
+          className='newUserFormInput'
         />
         {this.state.showErrorMessages.name ?
-          <p>Name is not in valid format. Please correct and try again.</p> : null
+          <p className='errorMessage'>&#9432; Name is not in valid format. Please correct and try again.</p> : null
         }
-        <label>Email </label>
+        <div className='newUserLabelContainer'>
+          <label className='newUserFormLabel'>Email </label>
+        </div>
         <input
           name='email'
           type='text'
           value={this.state.email}
           onChange={e => this.handleChange(e)}
+          className='newUserFormInput'
         />
         {this.state.showErrorMessages.email ?
-          <p>Wrong or Invalid email address. Please correct and try again.</p> : null
+          <p className='errorMessage'>&#9432; Wrong or Invalid email address. Please correct and try again.</p> : null
         }
-        <label>Password </label>
+        <div className='newUserLabelContainer'>
+          <label className='newUserFormLabel'>Password </label>
+        </div>
         <input
           name='password'
           placeholder='At least 8 characters'
           type='password'
           value={this.state.password}
           onChange={e => this.handleChange(e)}
+          className='newUserFormInput'
         />
         {this.state.showErrorMessages.password ?
-          <p>Minimum 8 characters required.</p>: null
+          <p className='errorMessage'>&#9432; Minimum 8 characters required.</p>: null
         }
-        <label>Occupation: </label>
+        <div className='newUserLabelContainer'>
+          <label className='newUserFormLabel'>Occupation: </label>
+        </div>
         <select
           name='occupation'
           onChange={e => this.handleChange(e)}
+          className='newUserFormSelectInput'
         >
           <option value="">-Choose an occupation-</option>
           {occupations.map((occupation, idx) => {
@@ -87,12 +100,15 @@ class SignUpForm extends React.Component {
           })}
         </select>
         {this.state.showErrorMessages.occupation ?
-          <p>Please select from the occupation options.</p>: null
+          <p className='errorMessage'>&#9432; Please select from the occupation options.</p>: null
         }
-        <label>State: </label>
+        <div className='newUserLabelContainer'>
+          <label className='newUserFormLabel'>State: </label>
+        </div>
         <select
           name='state'
           onChange={e => this.handleChange(e)}
+          className='newUserFormSelectInput'
         >
           <option value="">-Choose a state-</option>
           {states.map((state, idx) => {
@@ -104,9 +120,9 @@ class SignUpForm extends React.Component {
           })}
         </select>
         {this.state.showErrorMessages.state ?
-          <p>Please select from the state options.</p>: null
+          <p className='errorMessage'>&#9432; Please select from the state options.</p>: null
         }
-        <button>Continue</button>
+        <button className='newUserFormSubmitButton'>Continue</button>
       </form>
     );
   }
