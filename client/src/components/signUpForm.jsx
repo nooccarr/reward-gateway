@@ -30,6 +30,7 @@ class SignUpForm extends React.Component {
       alert(invalidReasons);
     } else {
       this.props.postNewUser(this.state);
+      this.props.toggleShowForm();
       alert('Successfully updated!');
     }
   }
@@ -39,7 +40,7 @@ class SignUpForm extends React.Component {
 
     return (
       <form onSubmit={e => this.handleSubmit(e)}>
-        <label>Name: </label>
+        <label>name: </label>
         <input
           name='name'
           placeholder='name'
@@ -47,7 +48,7 @@ class SignUpForm extends React.Component {
           value={this.state.name}
           onChange={e => this.handleChange(e)}
         />
-        <label>Email: </label>
+        <label>email: </label>
         <input
           name='email'
           placeholder='email'
@@ -55,7 +56,7 @@ class SignUpForm extends React.Component {
           value={this.state.email}
           onChange={e => this.handleChange(e)}
         />
-        <label>Password: </label>
+        <label>password: </label>
         <input
           name='password'
           placeholder='password'
@@ -63,7 +64,7 @@ class SignUpForm extends React.Component {
           value={this.state.password}
           onChange={e => this.handleChange(e)}
         />
-        <label>Occupation: </label>
+        <label>occupation: </label>
         <select
           name='occupation'
           onChange={e => this.handleChange(e)}
@@ -78,7 +79,7 @@ class SignUpForm extends React.Component {
           })}
         </select>
 
-        <label>State: </label>
+        <label>state: </label>
         <select
           name='state'
           onChange={e => this.handleChange(e)}
@@ -92,7 +93,7 @@ class SignUpForm extends React.Component {
             );
           })}
         </select>
-        <button>Sign Up!</button>
+        <button>sign up!</button>
       </form>
     );
   }

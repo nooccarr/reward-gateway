@@ -8,8 +8,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       occupations: null,
-      states: null
+      states: null,
+      showForm: false
     };
+
+    this.toggleShowForm = this.toggleShowForm.bind(this);
   }
 
   componentDidMount() {
@@ -36,18 +39,28 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
+  toggleShowForm() {
+    this.setState({ showForm: !this.state.showForm });
+  }
+
   render() {
     if (!this.state.occupations || !this.state.states) {
-      return (<div>Loading...</div>);
+      return (<div>loading...</div>);
     } else {
       return (
         <div>
           <h1>reward portal</h1>
-          <SignUpForm
-            occupations={this.state.occupations}
-            states={this.state.states}
-            postNewUser={this.postNewUser}
-          />
+          {this.state.showForm ?
+            <SignUpForm
+              occupations={this.state.occupations}
+              states={this.state.states}
+              postNewUser={this.postNewUser}
+              toggleShowForm={this.toggleShowForm}
+            /> :
+            <button onClick={this.toggleShowForm}>
+              sign up
+            </button>
+          }
         </div>
       );
     }
