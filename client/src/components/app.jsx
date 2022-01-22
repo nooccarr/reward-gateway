@@ -32,6 +32,7 @@ class App extends React.Component {
     } else {
       return (
         <div>
+          <h1>reward portal</h1>
           <SignUpForm
             occupations={this.state.occupations}
             states={this.state.states}
