@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import SignUpForm from './signUpForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,16 +26,16 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
-
-
   render() {
     if (!this.state.occupations || !this.state.states) {
       return (<div>Loading...</div>);
     } else {
       return (
         <div>
-          {/* <div>{console.log(this.state)}</div> */}
-          Please Sign Up!
+          <SignUpForm
+            occupations={this.state.occupations}
+            states={this.state.states}
+          />
         </div>
       );
     }
