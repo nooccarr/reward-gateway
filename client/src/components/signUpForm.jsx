@@ -43,7 +43,7 @@ class SignUpForm extends React.Component {
       <form className='newUserForm' onSubmit={e => this.handleSubmit(e)}>
         <h1 className='newUserFormHeader'>Create account</h1>
         <div className='newUserLabelContainer'>
-          <label className='newUserFormLabel'>Your name </label>
+          <label className='newUserFormLabel' for='name'>Your name </label>
         </div>
         <input
           name='name'
@@ -56,7 +56,7 @@ class SignUpForm extends React.Component {
           <p className='errorMessage'>&#9432; Name is not in valid format. Please correct and try again.</p> : null
         }
         <div className='newUserLabelContainer'>
-          <label className='newUserFormLabel'>Email </label>
+          <label className='newUserFormLabel' for='email'>Email </label>
         </div>
         <input
           name='email'
@@ -69,7 +69,7 @@ class SignUpForm extends React.Component {
           <p className='errorMessage'>&#9432; Wrong or Invalid email address. Please correct and try again.</p> : null
         }
         <div className='newUserLabelContainer'>
-          <label className='newUserFormLabel'>Password </label>
+          <label className='newUserFormLabel' for='password'>Password </label>
         </div>
         <input
           name='password'
@@ -83,7 +83,7 @@ class SignUpForm extends React.Component {
           <p className='errorMessage'>&#9432; Minimum 8 characters required.</p>: null
         }
         <div className='newUserLabelContainer'>
-          <label className='newUserFormLabel'>Occupation: </label>
+          <label className='newUserFormLabel' for='occupation'>Occupation: </label>
         </div>
         <select
           name='occupation'
@@ -103,7 +103,7 @@ class SignUpForm extends React.Component {
           <p className='errorMessage'>&#9432; Please select from the occupation options.</p>: null
         }
         <div className='newUserLabelContainer'>
-          <label className='newUserFormLabel'>State: </label>
+          <label className='newUserFormLabel' for='state'>State: </label>
         </div>
         <select
           name='state'

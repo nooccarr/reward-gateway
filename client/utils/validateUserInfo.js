@@ -10,7 +10,6 @@ const validateUserInfo = (info) => {
 
 const validName = (name) => {
   let words = name.split(' ');
-  if (words.length < 2 || words.length > 3) return false;
   for (let i = 0; i < words.length; i++) {
     let validWord = /^[a-zA-Z]+$/.test(words[i]); // regex: alphabet only
     if (!validWord) return false;
