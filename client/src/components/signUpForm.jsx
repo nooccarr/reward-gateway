@@ -53,8 +53,10 @@ class SignUpForm extends React.Component {
               className='newUserFormInput'
             />
           </label>
-          {this.state.showErrorMessages.name ?
-            <p className='errorMessage'>&#9432; Name is not in valid format. Please correct and try again.</p> : null
+          {
+            this.state.showErrorMessages.name && (
+              <p className='errorMessage'>&#9432; Name is not in valid format. Please correct and try again.</p>
+            )
           }
         </div>
         <div className='newUserLabelContainer'>
@@ -68,8 +70,10 @@ class SignUpForm extends React.Component {
               className='newUserFormInput'
             />
           </label>
-          {this.state.showErrorMessages.email ?
-            <p className='errorMessage'>&#9432; Wrong or Invalid email address. Please correct and try again.</p> : null
+          {
+            this.state.showErrorMessages.email && (
+              <p className='errorMessage'>&#9432; Wrong or Invalid email address. Please correct and try again.</p>
+            )
           }
         </div>
         <div className='newUserLabelContainer'>
@@ -84,8 +88,10 @@ class SignUpForm extends React.Component {
               className='newUserFormInput'
             />
           </label>
-          {this.state.showErrorMessages.password ?
-            <p className='errorMessage'>&#9432; Minimum 8 characters required.</p>: null
+          {
+            this.state.showErrorMessages.password && (
+              <p className='errorMessage'>&#9432; Minimum 8 characters required.</p>
+            )
           }
         </div>
         <div className='newUserLabelContainer'>
@@ -106,8 +112,10 @@ class SignUpForm extends React.Component {
               })}
             </select>
           </label>
-          {this.state.showErrorMessages.occupation ?
-            <p className='errorMessage'>&#9432; Please select from the occupation options.</p>: null
+          {
+            this.state.showErrorMessages.occupation && (
+              <p className='errorMessage'>&#9432; Please select from the occupation options.</p>
+            )
           }
         </div>
         <div className='newUserLabelContainer'>
@@ -128,8 +136,10 @@ class SignUpForm extends React.Component {
               })}
             </select>
           </label>
-          {this.state.showErrorMessages.state ?
-            <p className='errorMessage'>&#9432; Please select from the state options.</p>: null
+          {
+            this.state.showErrorMessages.state && (
+              <p className='errorMessage'>&#9432; Please select from the state options.</p>
+            )
           }
         </div>
         <button className='newUserFormSubmitButton'>Continue</button>
