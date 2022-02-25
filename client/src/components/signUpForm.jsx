@@ -43,85 +43,95 @@ class SignUpForm extends React.Component {
       <form className='newUserForm' onSubmit={e => this.handleSubmit(e)}>
         <h1 className='newUserFormHeader'>Create account</h1>
         <div className='newUserLabelContainer'>
-          <label className='newUserFormLabel' for='name'>Your name </label>
+          <label className='newUserFormLabel'>
+            Your name
+            <input
+              name='name'
+              type='text'
+              value={this.state.name}
+              onChange={e => this.handleChange(e)}
+              className='newUserFormInput'
+            />
+          </label>
+          {this.state.showErrorMessages.name ?
+            <p className='errorMessage'>&#9432; Name is not in valid format. Please correct and try again.</p> : null
+          }
         </div>
-        <input
-          name='name'
-          type='text'
-          value={this.state.name}
-          onChange={e => this.handleChange(e)}
-          className='newUserFormInput'
-        />
-        {this.state.showErrorMessages.name ?
-          <p className='errorMessage'>&#9432; Name is not in valid format. Please correct and try again.</p> : null
-        }
         <div className='newUserLabelContainer'>
-          <label className='newUserFormLabel' for='email'>Email </label>
+          <label className='newUserFormLabel'>
+            Email
+            <input
+              name='email'
+              type='text'
+              value={this.state.email}
+              onChange={e => this.handleChange(e)}
+              className='newUserFormInput'
+            />
+          </label>
+          {this.state.showErrorMessages.email ?
+            <p className='errorMessage'>&#9432; Wrong or Invalid email address. Please correct and try again.</p> : null
+          }
         </div>
-        <input
-          name='email'
-          type='text'
-          value={this.state.email}
-          onChange={e => this.handleChange(e)}
-          className='newUserFormInput'
-        />
-        {this.state.showErrorMessages.email ?
-          <p className='errorMessage'>&#9432; Wrong or Invalid email address. Please correct and try again.</p> : null
-        }
         <div className='newUserLabelContainer'>
-          <label className='newUserFormLabel' for='password'>Password </label>
+          <label className='newUserFormLabel'>
+            Password
+            <input
+              name='password'
+              placeholder='At least 8 characters'
+              type='password'
+              value={this.state.password}
+              onChange={e => this.handleChange(e)}
+              className='newUserFormInput'
+            />
+          </label>
+          {this.state.showErrorMessages.password ?
+            <p className='errorMessage'>&#9432; Minimum 8 characters required.</p>: null
+          }
         </div>
-        <input
-          name='password'
-          placeholder='At least 8 characters'
-          type='password'
-          value={this.state.password}
-          onChange={e => this.handleChange(e)}
-          className='newUserFormInput'
-        />
-        {this.state.showErrorMessages.password ?
-          <p className='errorMessage'>&#9432; Minimum 8 characters required.</p>: null
-        }
         <div className='newUserLabelContainer'>
-          <label className='newUserFormLabel' for='occupation'>Occupation: </label>
+          <label className='newUserFormLabel'>
+            Occupation:
+            <select
+              name='occupation'
+              onChange={e => this.handleChange(e)}
+              className='newUserFormSelectInput'
+            >
+              <option value="">-Choose an occupation-</option>
+              {occupations.map((occupation, idx) => {
+                return (
+                  <option value={occupation} key={idx}>
+                    {occupation}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+          {this.state.showErrorMessages.occupation ?
+            <p className='errorMessage'>&#9432; Please select from the occupation options.</p>: null
+          }
         </div>
-        <select
-          name='occupation'
-          onChange={e => this.handleChange(e)}
-          className='newUserFormSelectInput'
-        >
-          <option value="">-Choose an occupation-</option>
-          {occupations.map((occupation, idx) => {
-            return (
-              <option value={occupation} key={idx}>
-                {occupation}
-              </option>
-            );
-          })}
-        </select>
-        {this.state.showErrorMessages.occupation ?
-          <p className='errorMessage'>&#9432; Please select from the occupation options.</p>: null
-        }
         <div className='newUserLabelContainer'>
-          <label className='newUserFormLabel' for='state'>State: </label>
+          <label className='newUserFormLabel'>
+            State:
+            <select
+              name='state'
+              onChange={e => this.handleChange(e)}
+              className='newUserFormSelectInput'
+            >
+              <option value="">-Choose a state-</option>
+              {states.map((state, idx) => {
+                return (
+                  <option value={state.abbreviation} key={idx}>
+                    {state.name}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+          {this.state.showErrorMessages.state ?
+            <p className='errorMessage'>&#9432; Please select from the state options.</p>: null
+          }
         </div>
-        <select
-          name='state'
-          onChange={e => this.handleChange(e)}
-          className='newUserFormSelectInput'
-        >
-          <option value="">-Choose a state-</option>
-          {states.map((state, idx) => {
-            return (
-              <option value={state.abbreviation} key={idx}>
-                {state.name}
-              </option>
-            );
-          })}
-        </select>
-        {this.state.showErrorMessages.state ?
-          <p className='errorMessage'>&#9432; Please select from the state options.</p>: null
-        }
         <button className='newUserFormSubmitButton'>Continue</button>
       </form>
     );
